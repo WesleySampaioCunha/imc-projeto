@@ -13,9 +13,10 @@ aside {
    background-color: blue; 
    color: white; 
    padding: 5px;
-   margin: 5px;
-   margin-top: 65px;
-   margin-left: 509px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
    height: 400px;
    width: 300px;
    
