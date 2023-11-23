@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="shortcut icon" href="../imc-projeto/favicon/logo.png" type="image/x-icon">
+    <title>IMC - Calulando</title>
+    <link rel="stylesheet" href="../imc-projeto/imc-style.css">
+</head>
+<body>
+
+    <header>
+        <h1> Criando IMC </h1>
+    </header>
+
+    <section class="perfil-imc">
+
+        <aside>
+            <div id="altura01">
+                <label for="altura">Altura (cm): </label>
+                <input id="altura" type="number" min="100" max="250">
+            </div><br>
+            <div id="peso01">
+                <label for="peso">Peso (kg): </label>
+                <input id="peso" type="number" min="0" max="250">
+            </div><br>
+            <div id="botao">
+                <button onclick="calcularIMC()">Calcular o IMC</button>
+            </div>
+            Resultado:  <div id="resultadoIMC"></div>
+            
+
+                <pre>
+******************************************
+|    IMC          |          CATEGORIA   |
+|----------------------------------------|
+| Até 18,5        |  Abaixo do peso      |
+| De  18,5 - 24,9 |  Saudável            |
+| De  25,0 - 29,9 |  Sobrepeso           |
+| De  30,0 - 39,9 |  Obeso               |
+| Acima de 40     |Extremo ou alto risco |    
+|                                   Peso |
+******************************************
+                </pre>
+
+        </aside>
+
+    </section>
+
+
+    <script>
+        function calcularIMC() {
+            let altura = window.document.getElementById('altura').value;
+            let peso = window.document.getElementById('peso').value;
+            let res = window.document.getElementById('resultadoIMC');
+
+            altura /= 100;
+
+            let imc = ( peso / (altura * altura));
+
+            res.innerHTML = `IMC é ${imc.toFixed(2)}`;
+
+        }
+    </script>
+
+</body>
+</html>
